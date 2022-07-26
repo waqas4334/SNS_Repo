@@ -367,6 +367,7 @@ class GeyserHomeScreen extends React.Component {
                 percent={100}
                 radius={wp('29%')}
                 borderWidth={12}
+                
                 // color="teal"
                 // shadowColor="#1976D2"
                 //apply gradient color to progress circle
@@ -377,7 +378,7 @@ class GeyserHomeScreen extends React.Component {
               <Dropdown
                 placeholder="Select Module..."
                 style={styles.dropDowns}
-                color="charcoal"
+                color="brown"
                 // items={moduleArray}
                 // selectedIndex={selectedModule}
                 // onSelect={(index, value) => this.handleSensorChange(index, value)}
@@ -396,7 +397,32 @@ class GeyserHomeScreen extends React.Component {
         </View>
 
         <View style={[styles.cards2Style, styles.commonCardProp]}>
-          <Text style={styles.cardsTextStyle}>Geyser Status</Text>
+         <View   style={{flexDirection:"row",justifyContent:"space-between"}}>
+           <View >
+             <Text style={styles.cardsTextStyle}>Geyser Status</Text>
+           </View>
+           <View >
+             <Text style={{}}>toogle </Text>
+          
+             </View>
+         </View>
+         
+         
+          <View   style={{
+ borderWidth:1,
+ alignItems:"center"
+          }}>
+              <Image
+                source={{
+                  uri:
+                    'https://img.icons8.com/external-smashingstocks-hand-drawn-black-smashing-stocks/344/external-water-boiler-electronics-and-appliances-smashingstocks-hand-drawn-black-smashing-stocks.png',
+                }}
+                style={{
+                  width: wp('10%'),
+                  height: hp('10%')
+                }}
+              />
+          </View>
         </View>
       </View>
     );
@@ -417,12 +443,13 @@ const styles = StyleSheet.create({
     paddingTop: hp('2%'),
 
     alignSelf: 'center',
+
   },
   dropDowns: {
     width: wp('40%'),
     height: hp('3%'),
     alignSelf: 'center',
-    marginTop: hp('2%'),
+    marginTop: hp('3%'),
     backgroundColor: '#fff',
   },
   cardsContainer: {
@@ -434,22 +461,22 @@ const styles = StyleSheet.create({
     // borderWidth: wp('0.5%'),
   },
   commonCardProp: {
-
     paddingTop: hp('2%'),
   },
   cards1Style: {
     width: wp('32%'),
     height: hp('15%'),
-    borderRadius: wp('8%'),       
-    backgroundColor: '#D1E9FC',
+    borderRadius: wp('8%'),
+    backgroundColor: '#FFF7CD',
   },
   cards2Style: {
     width: wp('35%'),
     height: hp('20%'),
     borderRadius: wp('8%'),
-    backgroundColor: '#FFF7CD',
+    backgroundColor: '#D1E9FC',
     elevation: 10,
     marginTop: hp('-4%'),
+    borderWidth: 1,
   },
   cards3Style: {
     width: wp('32%'),
