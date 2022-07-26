@@ -19,9 +19,9 @@ export const SENSOR_LOADING = 'SENSOR_LOADING';
 export const GET_SENSOR = 'GET_SENSOR';
 export const LOGS_LOADING = 'SENSOR_LOADING';
 export const GET_LOGS = 'GET_SENSOR';
-// export const url = 'https://hybrid.testserver.rubitronlabs.org';
+export const url = 'https://hybrid.testserver.rubitronlabs.org';
 // export const url = 'https://dashboard.rubitronlabs.org';
-export const url = 'https://rtl.in.ngrok.io';
+// export const url = 'https://rtl.in.ngrok.io';
 //  https://dashboard.rubitronlabs.org
 //  https://rtl.ngrok.io
 //  https://rtl.in.ngrok.io

@@ -146,7 +146,7 @@ class Test extends Component {
     return (
       // <SocketSS/>
       <SafeAreaView>
-          <Notification/>
+          {/* <Notification/> */}
 
         <ScrollView
         
