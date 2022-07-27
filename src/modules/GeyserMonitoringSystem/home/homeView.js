@@ -10,6 +10,7 @@ import {
   ActivityIndicator,
   Platform,
   YellowBox,
+  Switch,
 } from 'react-native';
 import { Card, Divider } from 'react-native-elements';
 import LinearGradient from 'react-native-linear-gradient';
@@ -91,6 +92,7 @@ class GeyserHomeScreen extends React.Component {
       sensorIndex: Index2,
     });
   };
+
   onClickButton = () => {
     console.log('pressed............');
     const { geyserModule } = this.props;
@@ -348,17 +350,18 @@ class GeyserHomeScreen extends React.Component {
         <View style={styles.SubContainer}>
           <ImageBackground
             // source={require('../../../../assets/images/blueGradient.avif')}
-            borderTopLeftRadius={110}
-            borderTopRightRadius={110}
-            borderBottomLeftRadius={80}
-            borderBottomRightRadius={80}
-            blurRadius={10}
+            borderTopLeftRadius={220}
+            borderTopRightRadius={220}
+            borderBottomLeftRadius={70}
+            borderBottomRightRadius={70}
             source={{
               uri:
-                'https://images.unsplash.com/photo-1621799754526-a0d52c49fad5?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80',
+                // 'https://images.unsplash.com/photo-1621799754526-a0d52c49fad5?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80',
+                'https://images.unsplash.com/photo-1483004406427-6acb078d1f2d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80',
             }}
+            // blurRadius={2}
             style={{
-              width: wp('85%'),
+              width: wp('88%'),
               height: hp('50%'),
             }}
           >
@@ -367,18 +370,24 @@ class GeyserHomeScreen extends React.Component {
                 percent={100}
                 radius={wp('29%')}
                 borderWidth={12}
-                
-                // color="teal"
-                // shadowColor="#1976D2"
-                //apply gradient color to progress circle
-                color="#93C7F9"
+                color="#3D96EE"
                 bgColor="white"
                 containerStyle={{ fontSize: wp(60) }}
-              ></ProgressCircle>
+              >
+                <Text
+                  style={{
+                    fontSize: wp(10),
+                    color: 'coral',
+                    fontWeight: 'bold',
+                  }}
+                >
+                  58° C
+                </Text>
+              </ProgressCircle>
               <Dropdown
                 placeholder="Select Module..."
                 style={styles.dropDowns}
-                color="brown"
+                color="black"
                 // items={moduleArray}
                 // selectedIndex={selectedModule}
                 // onSelect={(index, value) => this.handleSensorChange(index, value)}
@@ -389,40 +398,121 @@ class GeyserHomeScreen extends React.Component {
 
         <View style={styles.cardsContainer}>
           <View style={[styles.cards1Style, styles.commonCardProp]}>
-            <Text style={styles.cardsTextStyle}>Gas Valve</Text>
+            <Text
+              style={[
+                styles.cardsTextStyle,
+                { color: '#2E3134', textAlign: 'center', fontSize: wp('4%'),fontWeight: 'bold' },
+              ]}
+            >
+              Gas Valve
+            </Text>
+            <View
+              style={{
+                alignSelf: 'center',
+              }}
+            >
+              <Image
+                source={{
+                  uri:
+                    // 'https://img.icons8.com/external-smashingstocks-hand-drawn-black-smashing-stocks/344/external-water-boiler-electronics-and-appliances-smashingstocks-hand-drawn-black-smashing-stocks.png',
+                    'https://cdn-icons.flaticon.com/png/512/5580/premium/5580629.png?token=exp=1658918846~hmac=8e4f9e126e5c4b2bb4dfa91ba1163347',
+                }}
+                style={{
+                  width: wp('18%'),
+                  height: hp('9%'),
+                  tintColor: 'maroon',
+                }}
+              />
+          
+            </View>
+            <Text
+              style={[
+                styles.cardsTextStyle,
+                { color: '#2E3134', textAlign: 'center', fontSize: wp('4%') },
+              ]}
+            >
+          Closed
+            </Text>
+
+
           </View>
           <View style={[styles.cards3Style, styles.commonCardProp]}>
-            <Text style={styles.cardsTextStyle}>Burner Status</Text>
+            <Text
+              style={[
+                styles.cardsTextStyle,
+                { color: '#2E3134', textAlign: 'center', fontSize: wp('4%'),fontWeight: 'bold' },
+              ]}
+            >
+              Burner Status
+            </Text>
+            <View
+              style={{
+                alignSelf: 'center',
+                paddingTop: hp('1%'),
+              }}
+            >
+              <Image
+                source={{
+                  uri:
+                    // 'https://img.icons8.com/external-smashingstocks-hand-drawn-black-smashing-stocks/344/external-water-boiler-electronics-and-appliances-smashingstocks-hand-drawn-black-smashing-stocks.png',
+                    'https://cdn-icons.flaticon.com/png/512/4038/premium/4038546.png?token=exp=1658918748~hmac=5c396a8a3656ac4a58242b496a56b339',
+                }}
+                style={{
+                  width: wp('10%'),
+                  height: hp('8%'),
+                }}
+              />
+            </View>
+            <Text
+              style={[
+                styles.cardsTextStyle,
+                { color: '#2E3134', textAlign: 'center', fontSize: wp('4%') },
+              ]}>
+          ON
+            </Text>
           </View>
         </View>
 
         <View style={[styles.cards2Style, styles.commonCardProp]}>
-         <View   style={{flexDirection:"row",justifyContent:"space-between"}}>
-           <View >
-             <Text style={styles.cardsTextStyle}>Geyser Status</Text>
-           </View>
-           <View >
-             <Text style={{}}>toogle </Text>
-          
-             </View>
-         </View>
-         
-         
-          <View   style={{
- borderWidth:1,
- alignItems:"center"
-          }}>
-              <Image
-                source={{
-                  uri:
-                    'https://img.icons8.com/external-smashingstocks-hand-drawn-black-smashing-stocks/344/external-water-boiler-electronics-and-appliances-smashingstocks-hand-drawn-black-smashing-stocks.png',
-                }}
+          <View
+            style={{ flexDirection: 'row', justifyContent: 'space-between' }}
+          >
+            <View>
+              <Text
                 style={{
-                  width: wp('10%'),
-                  height: hp('10%')
+                  paddingLeft: wp('3%'),
+                  color: 'white',
+                  fontSize: wp('4%'),
+                  fontWeight: 'bold',
                 }}
-              />
+              >
+                Geyser Status
+              </Text>
+            </View>
+            <View>
+              <Switch />
+            </View>
           </View>
+
+          <View
+            style={{
+              alignSelf: 'center',
+            }}
+          >
+            <Image
+              source={{
+                uri:
+                  // 'https://img.icons8.com/external-smashingstocks-hand-drawn-black-smashing-stocks/344/external-water-boiler-electronics-and-appliances-smashingstocks-hand-drawn-black-smashing-stocks.png',
+                  'https://cdn-icons.flaticon.com/png/512/4487/premium/4487391.png?token=exp=1658916124~hmac=9ec7f981b9d949c813e8a22bba774797',
+              }}
+              style={{
+                width: wp('20%'),
+                height: hp('13%'),
+              }}
+            />
+          </View>
+
+
         </View>
       </View>
     );
@@ -436,14 +526,14 @@ const styles = StyleSheet.create({
     flex: 1,
     paddingTop: hp('2%'),
     alignItems: 'center',
-    // borderWidth: 1,
+    borderWidth: 1,
+    backgroundColor: 'white',
   },
   SubContainer: {},
   Progressbar: {
     paddingTop: hp('2%'),
 
     alignSelf: 'center',
-
   },
   dropDowns: {
     width: wp('40%'),
@@ -455,39 +545,43 @@ const styles = StyleSheet.create({
   cardsContainer: {
     flexDirection: 'row',
     justifyContent: 'space-between',
-    width: wp('85%'),
-    marginTop: hp('-6%'),
+    width: wp('75%'),
+    marginTop: hp('-7%'),
     borderColor: 'green',
-    // borderWidth: wp('0.5%'),
+    // borderWidth: 1,
   },
   commonCardProp: {
     paddingTop: hp('2%'),
   },
   cards1Style: {
-    width: wp('32%'),
-    height: hp('15%'),
+    width: wp('36%'),
+    height: hp('18%'),
     borderRadius: wp('8%'),
-    backgroundColor: '#FFF7CD',
-  },
-  cards2Style: {
-    width: wp('35%'),
-    height: hp('20%'),
-    borderRadius: wp('8%'),
-    backgroundColor: '#D1E9FC',
-    elevation: 10,
-    marginTop: hp('-4%'),
-    borderWidth: 1,
+    backgroundColor: 'white',
+
+    elevation: 15,
   },
   cards3Style: {
-    width: wp('32%'),
+    width: wp('36%'),
 
-    height: hp('15%'),
+    height: hp('18%'),
     borderRadius: wp('8%'),
-    backgroundColor: '#FFE7D9',
+    backgroundColor: 'white',
+
+    elevation: 15,
+  },
+  cards2Style: {
+    width: wp('45%'),
+    height: hp('20%'),
+    borderRadius: wp('5%'),
+    backgroundColor: '#2E3134',
+    elevation: 25,
+    marginTop: hp('2%'),
+    borderWidth: 1,
+    borderColor: '#ffffffff',
   },
   cardsTextStyle: {
-    fontSize: 11,
-    textAlign: 'center',
+    fontSize: 15,
   },
 
   // cardStyle: { width: wp('30%'), height: hp('20%') },
