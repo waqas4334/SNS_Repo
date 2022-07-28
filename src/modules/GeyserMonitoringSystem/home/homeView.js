@@ -1,4 +1,6 @@
 import React from 'react';
+// import LottieView from 'lottie-react-native';
+// import Lottie from 'lottie-react-native';
 import {
   View,
   Text,
@@ -346,175 +348,166 @@ class GeyserHomeScreen extends React.Component {
       //     </View>
       //   )}
       // </View>
-      <View style={styles.MainContainer}>
-        <View style={styles.SubContainer}>
-          <ImageBackground
-            // source={require('../../../../assets/images/blueGradient.avif')}
-            borderTopLeftRadius={220}
-            borderTopRightRadius={220}
-            borderBottomLeftRadius={70}
-            borderBottomRightRadius={70}
-            source={{
-              uri:
-                // 'https://images.unsplash.com/photo-1621799754526-a0d52c49fad5?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80',
-                'https://images.unsplash.com/photo-1483004406427-6acb078d1f2d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80',
-            }}
-            // blurRadius={2}
-            style={{
-              width: wp('88%'),
-              height: hp('50%'),
-            }}
-          >
-            <View style={styles.Progressbar}>
-              <ProgressCircle
-                percent={100}
-                radius={wp('29%')}
-                borderWidth={12}
-                color="#3D96EE"
-                bgColor="white"
-                containerStyle={{ fontSize: wp(60) }}
-              >
-                <Text
-                  style={{
-                    fontSize: wp(10),
-                    color: 'coral',
-                    fontWeight: 'bold',
-                  }}
-                >
-                  58° C
-                </Text>
-              </ProgressCircle>
+      <ScrollView
+      //bounce effect for android
+      >
+        <View style={styles.MainContainer}>
+          <View style={styles.SubContainer}>
+            <ImageBackground
+              source={require('../../../../assets/images/waterBackground.jpg')}
+              borderTopLeftRadius={220}
+              borderTopRightRadius={220}
+              borderBottomLeftRadius={70}
+              borderBottomRightRadius={70}
+         
+              style={{
+                width: wp('88%'),
+                height: hp('50%'),
+              }}
+            >
+              <View style={styles.Progressbar}>
+                <View>
+                  <Text
+                    style={{
+                      fontSize: wp(10),
+                      //  color: '#B80C09',
+                      color: 'white',
+                      fontWeight: 'bold',
+                      textAlign: 'center',
+                    }}
+                  >
+                    58° C
+                  </Text>
+                </View>
+              </View>
               <Dropdown
                 placeholder="Select Module..."
                 style={styles.dropDowns}
                 color="black"
+                borderColor="white"
                 // items={moduleArray}
                 // selectedIndex={selectedModule}
                 // onSelect={(index, value) => this.handleSensorChange(index, value)}
               />
-            </View>
-          </ImageBackground>
-        </View>
-
-        <View style={styles.cardsContainer}>
-          <View style={[styles.cards1Style, styles.commonCardProp]}>
-            <Text
-              style={[
-                styles.cardsTextStyle,
-                { color: '#2E3134', textAlign: 'center', fontSize: wp('4%'),fontWeight: 'bold' },
-              ]}
-            >
-              Gas Valve
-            </Text>
-            <View
-              style={{
-                alignSelf: 'center',
-              }}
-            >
-              <Image
-                source={{
-                  uri:
-                    // 'https://img.icons8.com/external-smashingstocks-hand-drawn-black-smashing-stocks/344/external-water-boiler-electronics-and-appliances-smashingstocks-hand-drawn-black-smashing-stocks.png',
-                    'https://cdn-icons.flaticon.com/png/512/5580/premium/5580629.png?token=exp=1658918846~hmac=8e4f9e126e5c4b2bb4dfa91ba1163347',
-                }}
-                style={{
-                  width: wp('18%'),
-                  height: hp('9%'),
-                  tintColor: 'maroon',
-                }}
-              />
-          
-            </View>
-            <Text
-              style={[
-                styles.cardsTextStyle,
-                { color: '#2E3134', textAlign: 'center', fontSize: wp('4%') },
-              ]}
-            >
-          Closed
-            </Text>
-
-
+            </ImageBackground>
           </View>
-          <View style={[styles.cards3Style, styles.commonCardProp]}>
-            <Text
-              style={[
-                styles.cardsTextStyle,
-                { color: '#2E3134', textAlign: 'center', fontSize: wp('4%'),fontWeight: 'bold' },
-              ]}
-            >
-              Burner Status
-            </Text>
-            <View
-              style={{
-                alignSelf: 'center',
-                paddingTop: hp('1%'),
-              }}
-            >
-              <Image
-                source={{
-                  uri:
-                    // 'https://img.icons8.com/external-smashingstocks-hand-drawn-black-smashing-stocks/344/external-water-boiler-electronics-and-appliances-smashingstocks-hand-drawn-black-smashing-stocks.png',
-                    'https://cdn-icons.flaticon.com/png/512/4038/premium/4038546.png?token=exp=1658918748~hmac=5c396a8a3656ac4a58242b496a56b339',
-                }}
-                style={{
-                  width: wp('10%'),
-                  height: hp('8%'),
-                }}
-              />
-            </View>
-            <Text
-              style={[
-                styles.cardsTextStyle,
-                { color: '#2E3134', textAlign: 'center', fontSize: wp('4%') },
-              ]}>
-          ON
-            </Text>
-          </View>
-        </View>
 
-        <View style={[styles.cards2Style, styles.commonCardProp]}>
-          <View
-            style={{ flexDirection: 'row', justifyContent: 'space-between' }}
-          >
-            <View>
+          <View style={styles.cardsContainer}>
+            <View style={[styles.cards1Style, styles.commonCardProp]}>
               <Text
+                style={[
+                  styles.cardsTextStyle,
+                  {
+                    color: '#2E3134',
+                    textAlign: 'center',
+                    fontSize: wp('4%'),
+                    fontWeight: 'bold',
+                  },
+                ]}
+              >
+                Gas Valve
+              </Text>
+              <View
                 style={{
-                  paddingLeft: wp('3%'),
-                  color: 'white',
-                  fontSize: wp('4%'),
-                  fontWeight: 'bold',
+                  alignSelf: 'center',
                 }}
               >
-                Geyser Status
+                <Image
+                  source={require('../../../../assets/images/icons/gasValve.png')}
+                  style={{
+                    width: wp('18%'),
+                    height: hp('9%'),
+                    tintColor: 'maroon',
+                  }}
+                />
+              </View>
+              <Text
+                style={[
+                  styles.cardsTextStyle,
+                  { color: '#2E3134', textAlign: 'center', fontSize: wp('4%') },
+                ]}
+              >
+                Closed
               </Text>
             </View>
-            <View>
-              <Switch />
+            <View style={[styles.cards3Style, styles.commonCardProp]}>
+              <Text
+                style={[
+                  styles.cardsTextStyle,
+                  {
+                    color: '#2E3134',
+                    textAlign: 'center',
+                    fontSize: wp('4%'),
+                    fontWeight: 'bold',
+                  },
+                ]}
+              >
+                Burner Status
+              </Text>
+              <View
+                style={{
+                  alignSelf: 'center',
+                  paddingTop: hp('1%'),
+                }}
+              >
+                <Image
+                  source={require('../../../../assets/images/icons/Burner.png')}
+                  style={{
+                    width: wp('10%'),
+                    height: hp('8%'),
+                    //opacity from top to bottom
+                    opacity: 1,
+                  }}
+                />
+              </View>
+              <Text
+                style={[
+                  styles.cardsTextStyle,
+                  { color: '#2E3134', textAlign: 'center', fontSize: wp('4%') },
+                ]}
+              >
+                ON
+              </Text>
             </View>
           </View>
 
-          <View
-            style={{
-              alignSelf: 'center',
-            }}
-          >
-            <Image
-              source={{
-                uri:
-                  // 'https://img.icons8.com/external-smashingstocks-hand-drawn-black-smashing-stocks/344/external-water-boiler-electronics-and-appliances-smashingstocks-hand-drawn-black-smashing-stocks.png',
-                  'https://cdn-icons.flaticon.com/png/512/4487/premium/4487391.png?token=exp=1658916124~hmac=9ec7f981b9d949c813e8a22bba774797',
-              }}
+          <View style={[styles.cards2Style, styles.commonCardProp]}>
+            <View
+              style={{ flexDirection: 'row', justifyContent: 'space-between' }}
+            >
+              <View>
+                <Text
+                  style={{
+                    paddingLeft: wp('3%'),
+                    color: 'white',
+                    fontSize: wp('4%'),
+                    fontWeight: 'bold',
+                  }}
+                >
+                  Geyser Status
+                </Text>
+              </View>
+              <View>
+                <Switch />
+              </View>
+            </View>
+
+            <View
               style={{
-                width: wp('20%'),
-                height: hp('13%'),
+                alignSelf: 'center',
               }}
-            />
+            >
+              <Image
+                source={require('../../../../assets/images/icons/SmartHrbridGeyser.png')}
+                style={{
+                  width: wp('20%'),
+                  height: hp('13%'),
+                }}
+              />
+            </View>
           </View>
-
-
         </View>
-      </View>
+      </ScrollView>
     );
   }
 }
@@ -526,20 +519,30 @@ const styles = StyleSheet.create({
     flex: 1,
     paddingTop: hp('2%'),
     alignItems: 'center',
-    borderWidth: 1,
     backgroundColor: 'white',
   },
   SubContainer: {},
   Progressbar: {
-    paddingTop: hp('2%'),
-
+    marginTop: hp('1%'),
+    fontSize: wp(60),
     alignSelf: 'center',
+    justifyContent: 'center',
+    backgroundColor: '#2E3134',
+    width: wp('63%'),
+    height: hp('33%'),
+    borderRadius: wp('35%'),
+    borderWidth: wp('2%'),
+    borderColor: 'white',
+    shadowColor: 'red',
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.8,
+    shadowRadius: 2,
   },
   dropDowns: {
-    width: wp('40%'),
-    height: hp('3%'),
+    width: wp('45%'),
+    height: hp('4%'),
     alignSelf: 'center',
-    marginTop: hp('3%'),
+    marginTop: hp('1.5%'),
     backgroundColor: '#fff',
   },
   cardsContainer: {
@@ -571,7 +574,7 @@ const styles = StyleSheet.create({
     elevation: 15,
   },
   cards2Style: {
-    width: wp('45%'),
+    width: wp('50%'),
     height: hp('20%'),
     borderRadius: wp('5%'),
     backgroundColor: '#2E3134',

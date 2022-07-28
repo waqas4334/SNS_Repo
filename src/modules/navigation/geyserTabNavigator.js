@@ -131,10 +131,11 @@ export default createBottomTabNavigator(
     tabBarOptions: {
       showLabel: true,
       style: {
-        backgroundColor: colors.background,
+        backgroundColor: "#F7F7F2",
       },
       labelStyle: {
-        color: colors.grey,
+        color: "black",
+        fontWeight: "bold",
       },
     },
   },
