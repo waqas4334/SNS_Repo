@@ -415,7 +415,7 @@ class GeyserHomeScreen extends React.Component {
           </Animatable.View>
 
           <Animatable.View 
-        animation = "bounceInUp"
+        animation = "bounceInDown"
         duration = {2000}
          >
           <View style={styles.cardsContainer}>
@@ -497,7 +497,12 @@ class GeyserHomeScreen extends React.Component {
             </View>
           </View>
           </Animatable.View>
-
+         
+         
+          <Animatable.View 
+        animation = "bounceInUp"
+        duration = {2000}
+         >
 
           <View style={[styles.cards2Style, styles.commonCardProp]}>
             <View
@@ -540,6 +545,8 @@ class GeyserHomeScreen extends React.Component {
               />
             </View>
           </View>
+          </Animatable.View>
+
         </View>
       </ScrollView>
     );
