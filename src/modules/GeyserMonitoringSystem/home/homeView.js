@@ -42,6 +42,12 @@ import ProgressCircle from 'react-native-progress-circle';
 YellowBox.ignoreWarnings(['Warning:Can']);
 
 class GeyserHomeScreen extends React.Component {
+
+    //call bounce method automatically when component is loaded
+
+    
+
+   
   constructor(props) {
     super(props);
     this.state = {
@@ -50,8 +56,13 @@ class GeyserHomeScreen extends React.Component {
       selectedModuleValue: null,
       sensorIndex: null,
       value: 0,
+    },
+    this.state = {
+      toggle: false,
     };
+    
   }
+
   async componentDidMount() {
     const { user, navigation } = this.props;
     const done = await this.props.getSensors(user.id);
@@ -105,6 +116,9 @@ class GeyserHomeScreen extends React.Component {
       this.props.GeyserStatus(geyserModule[selectedModule]._id, 0);
     }
   };
+
+
+ handleTextRef = ref => this.text = ref;
 
   render() {
     const { moduleArray, selectedModule, selectedModuleValue } = this.state;
@@ -352,6 +366,13 @@ class GeyserHomeScreen extends React.Component {
       //bounce effect for android
       >
         <View style={styles.MainContainer}>
+          
+          
+        <Animatable.View 
+        animation = "fadeInUp"
+        duration = {2000}
+         >
+
           <View style={styles.SubContainer}>
             <ImageBackground
               source={require('../../../../assets/images/waterBackground.jpg')}
@@ -391,7 +412,12 @@ class GeyserHomeScreen extends React.Component {
               />
             </ImageBackground>
           </View>
+          </Animatable.View>
 
+          <Animatable.View 
+        animation = "bounceInUp"
+        duration = {2000}
+         >
           <View style={styles.cardsContainer}>
             <View style={[styles.cards1Style, styles.commonCardProp]}>
               <Text
@@ -470,6 +496,8 @@ class GeyserHomeScreen extends React.Component {
               </Text>
             </View>
           </View>
+          </Animatable.View>
+
 
           <View style={[styles.cards2Style, styles.commonCardProp]}>
             <View
@@ -488,7 +516,13 @@ class GeyserHomeScreen extends React.Component {
                 </Text>
               </View>
               <View>
-                <Switch />
+              <Switch
+          trackColor={{false: 'gray', true: 'teal'}}
+          thumbColor="white"
+          ios_backgroundColor="gray"
+          onValueChange={(value) => this.setState({toggle: value})}
+          value={this.state.toggle}
+        />
               </View>
             </View>
 
